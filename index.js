@@ -15,9 +15,16 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(isim,fiyat,kategori){
+	const yeniEleman = {};
+	yeniEleman.isim = isim ;
+	yeniEleman.fiyat = fiyat;
+	yeniEleman.kategori= kategori;
+	return yeniEleman;
 }
+
+console.log(MenuElemaniOlustur('Cheeseburger',8,'Burgerler'));
+
 
 
 
@@ -30,8 +37,9 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 	
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
-
-
+console.log(MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar"));
+console.log(MenuElemaniOlustur("Kolalar",5,"Pizzalar"));
+console.log(MenuElemaniOlustur("Kolalar",5,"Pizzalar"));
 
 /* Görev 2: 
 	Özel bir öğle yemeği yiyorsun! Öğretmen ve öğrencilere %25, diğer kişilere %10 indirim var. Aşağıdaki burger nesnesine, indirimi fiyatı otomatik olarak hesaplayan bir metot ekleyin.
@@ -72,6 +80,10 @@ const degerlendirmeler = [
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
 
+degerlendirmeler.filter(item => item.isim == "Ahmet")
+.forEach(item=>(item.geribildirim));
+	
+// console.log(degerlendirmeler.find(item=>item.isim == "Ahmet").geribildirim);
 
 
 /*  Görev 4 (ototest yok):  
@@ -79,7 +91,8 @@ const degerlendirmeler = [
 	1. Bu geribildirimi Reyna'nın değerlendirmesine ekleyin - "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım"
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
-
+degerlendirmeler.find(item =>item.isim == "Reyna").geribildirim = " bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+console.log(degerlendirmeler[7].geribildirim);
 
 
 /*  Görev 5: 
@@ -94,9 +107,16 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
-	
+function DegerledirmeEkle(degerlendirmeler1,isim1,puan1,geribildirim1){
+	let yeniDEgerlendirme= {
+		isim : isim1 ,
+		puan : puan1 ,
+		geribildirim:geribildirim1 
+	}
+	degerlendirmeler1.push(yeniDEgerlendirme);
+	return degerlendirmeler1;
+
+
 }
 
 
@@ -112,7 +132,7 @@ function DegerledirmeEkle(/*Kodlar buraya */){
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
+function AnahtardanDegerlendirmeAl(dizi,index) {
 	/*Kodlar buraya*/
 
 }
@@ -133,7 +153,7 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 
 
 function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
-	/*Kodlar buraya*/
+	
 } 
 
 
